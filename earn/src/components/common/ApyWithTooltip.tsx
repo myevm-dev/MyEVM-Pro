@@ -22,12 +22,12 @@ const TooltipWrapper = styled.div`
 const PointsBadgeWrapper = styled.div`
   // display: flex;
   // flex-direction: row;
-  // background: linear-gradient(90deg, rgba(155, 170, 243, 1) 0%, rgba(123, 216, 192, 1) 100%);
+  // background: linear-gradient(90deg, #00FEFB) 0%, rgba(123, 216, 192, 1) 100%);
 
   display: inline-block;
   position: relative;
   cursor: pointer;
-  background: rgba(82, 182, 154, 1);
+  background: #00fefb;
   align-items: center;
   width: fit-content;
   height: 20px;

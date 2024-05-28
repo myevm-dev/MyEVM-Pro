@@ -24,10 +24,10 @@ const DEFAULT_NAV_LINKS: NavBarLink[] = [
 
 const EXTENDED_NAV_LINKS: NavBarLink[] = [
   ...DEFAULT_NAV_LINKS,
-  {
-    label: 'Boost',
-    to: '/boost',
-  },
+  // {
+  //   label: 'Boost',
+  //   to: '/boost',
+  // },
   {
     label: 'Leaderboard',
     to: '/leaderboard',

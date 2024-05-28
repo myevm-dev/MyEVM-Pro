@@ -14,17 +14,13 @@ const NAV_LINKS: NavBarLink[] = [
     to: '/markets',
   },
   {
-    label: 'Lend',
-    to: isDappnet() ? 'https://earn.aloe.eth/' : 'https://earn.aloe.capital/',
+    label: 'Borrow',
+    to: isDappnet() ? 'https://earn.aloe.eth/' : 'https://earn.aloe.capital/borrow',
     isExternal: true,
   },
   {
-    label: 'Borrow',
-    to: '/borrow',
-  },
-  {
     label: 'LP',
-    to: 'https://prime.aloe.capital/',
+    to: '/borrow',
   },
   {
     label: 'Leaderboard',

@@ -11,7 +11,7 @@ import styled from 'styled-components';
 import { useAccount } from 'wagmi';
 
 const PAGE_SIZE = 10;
-const GREEN_ACCENT = 'rgba(82, 182, 154, 1)';
+const GREEN_ACCENT = '#00FEFB';
 
 const TableContainer = styled.div`
   width: 100%;

@@ -211,7 +211,7 @@ export default function BorrowAccountsPage() {
     <AppPage>
       <div className='flex gap-8 items-center mb-4'>
         <Display size='L' weight='semibold'>
-          Your Borrow Vaults
+          Your Leverage Uniswap LP NFTs
         </Display>
         <FilledGradientButtonWithIcon
           Icon={<PlusIcon />}
