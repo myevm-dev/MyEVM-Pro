@@ -52,6 +52,7 @@ const DesktopTopNav = styled.div`
   align-items: center;
   height: 64px;
   padding: 0 5px;
+  background-color: rgba(0, 1, 2, 1);
 `;
 
 const TabletBottomNav = styled.div`
@@ -89,17 +90,6 @@ const MobileBottomNav = styled.div`
 
   @media (min-width: ${RESPONSIVE_BREAKPOINTS.XS + 1}px) {
     display: none;
-  }
-`;
-
-const VerticalDivider = styled.div`
-  width: 1px;
-  height: 64px;
-  background-color: ${GREY_700};
-
-  @media (max-width: ${RESPONSIVE_BREAKPOINTS.TABLET}px) {
-    width: 100%;
-    height: 1px;
   }
 `;
 
@@ -145,7 +135,7 @@ const DesktopNavLink = styled(NavLink)`
   color: ${GREY_400};
 
   &.active {
-    color: white;
+    color: #00fefb;
   }
 
   &:hover {
@@ -300,7 +290,6 @@ export function NavBar(props: NavBarProps) {
           <DesktopLogo />
         </a>
         <DesktopNavLinks>
-          <VerticalDivider />
           {links.map((link, index) => (
             <React.Fragment key={index}>
               {link.isExternal ? (
@@ -310,7 +299,6 @@ export function NavBar(props: NavBarProps) {
               ) : (
                 <DesktopNavLink to={link.to}>{link.label}</DesktopNavLink>
               )}
-              <VerticalDivider />
             </React.Fragment>
           ))}
         </DesktopNavLinks>
