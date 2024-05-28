@@ -3,8 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { Popover } from '@headlessui/react';
 import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import DiscordFooterIcon from '../../assets/svg/DiscordFooter';
-import MediumFooterIcon from '../../assets/svg/MediumFooter';
 import TwitterFooterIcon from '../../assets/svg/TwitterFooter';
 import CloseModal from '../../assets/svg/CloseModal';
 import MenuIcon from '../../assets/svg/Menu';
@@ -363,7 +361,7 @@ export function NavBar(props: NavBarProps) {
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                Main site
+                Powered By Aloe
               </FooterLink>
               <FooterLink
                 as='a'
@@ -376,42 +374,15 @@ export function NavBar(props: NavBarProps) {
               >
                 Docs
               </FooterLink>
-              <FooterLink
-                as='a'
-                size='S'
-                weight='medium'
-                color={GREY_400}
-                href={TERMS_OF_SERVICE_URL}
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                Terms
-              </FooterLink>
             </div>
             <div className='flex flex-row justify-between mt-2'>
               <a
-                href={'https://discord.com/invite/gpt4sUv6sw'}
-                target='_blank'
-                rel='noopener noreferrer'
-                title='Join our Discord'
-              >
-                <DiscordFooterIcon width={14} height={11} />
-              </a>
-              <a
-                href={'https://twitter.com/aloecapital'}
+                href={'https://twitter.com/myevm.xyz'}
                 target='_blank'
                 rel='noopener noreferrer'
                 title='Follow us on Twitter'
               >
                 <TwitterFooterIcon width={15} height={11} />
-              </a>
-              <a
-                href={'https://aloelabs.medium.com'}
-                target='_blank'
-                rel='noopener noreferrer'
-                title='Connect with us on Medium'
-              >
-                <MediumFooterIcon width={21} height={11} />
               </a>
             </div>
           </StyledPopoverPanel>
@@ -498,19 +469,7 @@ export function NavBar(props: NavBarProps) {
               </div>
               <div className='flex flex-col gap-2 mt-2'>
                 <ExternalFooterLinkWithIcon
-                  href={'https://discord.com/invite/gpt4sUv6sw'}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  title='Join our Discord'
-                  className=''
-                >
-                  <DiscordFooterIcon width={14} height={11} />
-                  <Text size='M' weight='medium' color='unset'>
-                    Discord
-                  </Text>
-                </ExternalFooterLinkWithIcon>
-                <ExternalFooterLinkWithIcon
-                  href={'https://twitter.com/aloecapital'}
+                  href={'https://twitter.com/myevmxyz'}
                   target='_blank'
                   rel='noopener noreferrer'
                   title='Follow us on Twitter'
@@ -518,17 +477,6 @@ export function NavBar(props: NavBarProps) {
                   <TwitterFooterIcon width={15} height={11} />
                   <Text size='M' weight='medium' color='unset'>
                     Twitter
-                  </Text>
-                </ExternalFooterLinkWithIcon>
-                <ExternalFooterLinkWithIcon
-                  href={'https://aloelabs.medium.com'}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  title='Connect with us on Medium'
-                >
-                  <MediumFooterIcon width={21} height={11} />
-                  <Text size='M' weight='medium' color='unset'>
-                    Medium
                   </Text>
                 </ExternalFooterLinkWithIcon>
               </div>

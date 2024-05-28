@@ -3,12 +3,9 @@ import React from 'react';
 import { Text } from './Typography';
 import styled from 'styled-components';
 
-import DiscordFooterIcon from '../../assets/svg/DiscordFooter';
 import TwitterFooterIcon from '../../assets/svg/TwitterFooter';
-import MediumFooterIcon from '../../assets/svg/MediumFooter';
 import { RESPONSIVE_BREAKPOINT_TABLET } from '../../data/constants/Breakpoints';
 import { GREY_400 } from '../../data/constants/Colors';
-import { TERMS_OF_SERVICE_URL } from '../../data/constants/Values';
 
 const StyledFooter = styled.footer`
   position: fixed;
@@ -20,7 +17,7 @@ const StyledFooter = styled.footer`
   align-items: center;
   justify-content: space-between;
   min-height: 60px;
-  background-color: rgba(6, 11, 15, 1);
+  background-color: rgba(0, 1, 2, 1);
   border-top: 1px solid rgba(18, 29, 37, 1);
   padding-left: 188px;
   padding-right: 180px;
@@ -58,7 +55,7 @@ export default function Footer() {
           target='_blank'
           rel='noopener noreferrer'
         >
-          Main site
+          Powered By Aloe
         </FooterLink>
         <VerticalDivider />
         <FooterLink
@@ -72,43 +69,10 @@ export default function Footer() {
         >
           Docs
         </FooterLink>
-        <VerticalDivider />
-        <FooterLink
-          as='a'
-          size='S'
-          weight='medium'
-          color={GREY_400}
-          href={TERMS_OF_SERVICE_URL}
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Terms
-        </FooterLink>
       </div>
       <div className='flex flex-row items-center gap-x-6'>
-        <a
-          href={'https://discord.com/invite/gpt4sUv6sw'}
-          target='_blank'
-          rel='noopener noreferrer'
-          title='Join our Discord'
-        >
-          <DiscordFooterIcon width={14} height={11} />
-        </a>
-        <a
-          href={'https://twitter.com/aloecapital'}
-          target='_blank'
-          rel='noopener noreferrer'
-          title='Follow us on Twitter'
-        >
+        <a href={'https://twitter.com/myevmxyz'} target='_blank' rel='noopener noreferrer' title='Follow us on Twitter'>
           <TwitterFooterIcon width={15} height={11} />
-        </a>
-        <a
-          href={'https://aloelabs.medium.com'}
-          target='_blank'
-          rel='noopener noreferrer'
-          title='Connect with us on Medium'
-        >
-          <MediumFooterIcon width={21} height={11} />
         </a>
       </div>
     </StyledFooter>
