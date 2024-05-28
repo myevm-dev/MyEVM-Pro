@@ -28,9 +28,9 @@ import { GNFormat } from '../../data/GoodNumber';
 import { useLeaderboardValue } from '../../hooks/UseLeaderboard';
 
 const DesktopLogo = styled(AloeDesktopLogo)`
-  width: 100px;
-  height: 40px;
-  margin-right: 32px;
+  width: 60px;
+  height: 60px;
+  margin-right: 1px;
   @media (max-width: ${RESPONSIVE_BREAKPOINTS.TABLET}px) {
     display: none;
   }
@@ -53,7 +53,7 @@ const DesktopTopNav = styled.div`
   display: flex;
   align-items: center;
   height: 64px;
-  padding: 0 32px;
+  padding: 0 5px;
 `;
 
 const TabletBottomNav = styled.div`
