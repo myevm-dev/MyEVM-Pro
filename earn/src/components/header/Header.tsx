@@ -13,18 +13,25 @@ const DEFAULT_NAV_LINKS: NavBarLink[] = [
     to: '/markets',
   },
   {
-    label: 'Advanced',
+    label: 'Borrow',
     to: '/borrow',
+  },
+  {
+    label: 'LP',
+    to: 'https://prime.aloe.capital/',
   },
 ];
 
 const EXTENDED_NAV_LINKS: NavBarLink[] = [
-  ...DEFAULT_NAV_LINKS.slice(0, 2),
+  ...DEFAULT_NAV_LINKS,
   {
     label: 'Boost',
     to: '/boost',
   },
-  ...DEFAULT_NAV_LINKS.slice(2),
+  {
+    label: 'Leaderboard',
+    to: '/leaderboard',
+  },
 ];
 
 const Nav = styled.nav`

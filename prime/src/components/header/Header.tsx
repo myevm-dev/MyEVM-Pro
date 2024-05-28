@@ -6,13 +6,29 @@ import tw from 'twin.macro';
 
 const NAV_LINKS: NavBarLink[] = [
   {
+    label: 'Portfolio',
+    to: '/portfolio',
+  },
+  {
+    label: 'Markets',
+    to: '/markets',
+  },
+  {
+    label: 'Lend',
+    to: isDappnet() ? 'https://earn.aloe.eth/' : 'https://earn.aloe.capital/',
+    isExternal: true,
+  },
+  {
     label: 'Borrow',
     to: '/borrow',
   },
   {
-    label: 'Earn',
-    to: isDappnet() ? 'https://earn.aloe.eth/' : 'https://earn.aloe.capital/',
-    isExternal: true,
+    label: 'LP',
+    to: 'https://prime.aloe.capital/',
+  },
+  {
+    label: 'Leaderboard',
+    to: '/leaderboard',
   },
 ];
 

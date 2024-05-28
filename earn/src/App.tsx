@@ -1,10 +1,10 @@
 import { Suspense, useEffect } from 'react';
+
 import * as Sentry from '@sentry/react';
 import { createSyncStoragePersister } from '@tanstack/query-sync-storage-persister';
 import { QueryClient } from '@tanstack/react-query';
 import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
 import { Route, Routes, Navigate } from 'react-router-dom';
-
 import Footer from 'shared/lib/components/common/Footer';
 import { Text } from 'shared/lib/components/common/Typography';
 import { wagmiConfig } from 'shared/lib/components/WagmiConfig';
