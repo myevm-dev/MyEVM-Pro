@@ -64,7 +64,7 @@ const TabletBottomNav = styled.div`
   left: 0;
   right: 0;
   height: 64px;
-  background-color: rgba(6, 11, 15, 1);
+  background-color: rgba(0, 1, 2, 1);
   border-top: 1px solid ${GREY_700};
   padding: 8px 16px;
 
@@ -85,7 +85,7 @@ const MobileBottomNav = styled.div`
   left: 0;
   right: 0;
   height: 64px;
-  background-color: rgba(6, 11, 15, 1);
+  background-color: rgba(0, 1, 2, 1);
   border-top: 1px solid ${GREY_700};
   padding: 8px 16px;
 
