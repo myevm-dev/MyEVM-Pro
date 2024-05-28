@@ -44,10 +44,8 @@ const CONNECT_WALLET_CHECKBOXES = [
     </a>
     .
   </Text>,
-  <Text>
-    I will not use the platform in any way that violates applicable federal, state, local, or international laws.
-  </Text>,
-  <Text>I acknowledge that platform may result in loss of funds.</Text>,
+  <Text>I will not violate federal, state, local, or international laws.</Text>,
+  <Text>I acknowledge that trading may result in loss of funds.</Text>,
 ];
 
 function AppBodyWrapper() {

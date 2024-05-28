@@ -10,7 +10,6 @@ import { Text } from 'shared/lib/components/common/Typography';
 import WelcomeModal from 'shared/lib/components/common/WelcomeModal';
 import { wagmiConfig } from 'shared/lib/components/WagmiConfig';
 import { PRIVACY_POLICY_URL, TERMS_OF_SERVICE_URL } from 'shared/lib/data/constants/Values';
-import useEffectOnce from 'shared/lib/hooks/UseEffectOnce';
 import { getLocalStorageBoolean, setLocalStorageBoolean } from 'shared/lib/util/LocalStorage';
 import ScrollToTop from 'shared/lib/util/ScrollToTop';
 import { useAccount, usePublicClient, WagmiProvider, serialize, deserialize } from 'wagmi';
@@ -42,8 +41,7 @@ const CONNECT_WALLET_CHECKBOXES = [
     </a>
     .
   </Text>,
-  <Text>I am not a citizen or resident of the United States.</Text>,
-  <Text>I acknowledge that Aloe II is experimental software and use of the platform may result in loss of funds.</Text>,
+  <Text>I acknowledge that trading may result in loss of funds.</Text>,
 ];
 
 function AppBodyWrapper() {
