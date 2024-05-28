@@ -16,7 +16,6 @@ import { getToken } from 'shared/lib/data/TokenData';
 import useChain from 'shared/lib/hooks/UseChain';
 import { useChainDependentState } from 'shared/lib/hooks/UseChainDependentState';
 import useEffectOnce from 'shared/lib/hooks/UseEffectOnce';
-import { useGeoFencing } from 'shared/lib/hooks/UseGeoFencing';
 import { generateBytes12Salt } from 'shared/lib/util/Salt';
 import { Address } from 'viem';
 import { Config, useAccount, useClient, usePublicClient, useWriteContract } from 'wagmi';
@@ -31,10 +30,9 @@ import { UNISWAP_POOL_DENYLIST } from '../data/constants/Addresses';
 import { TOPIC0_CREATE_MARKET_EVENT } from '../data/constants/Signatures';
 import { fetchMarginAccountPreviews, MarginAccountPreview, UniswapPoolInfo } from '../data/MarginAccount';
 import { useEthersProvider } from '../util/Provider';
-
 export default function BorrowAccountsPage() {
   const activeChain = useChain();
-  const { isAllowed: isAllowedToInteract, isLoading: isLoadingGeoFencing } = useGeoFencing();
+
   // MARK: component state
   // --> transaction modals
   const [showConfirmModal, setShowConfirmModal] = useState(false);
@@ -159,10 +157,6 @@ export default function BorrowAccountsPage() {
 
     async function fetch(userAddress: string) {
       // Guard clause: if the BorrowerLens contract is null, don't fetch
-      if (!isAllowedToInteract) {
-        setMarginAccounts([]);
-        return;
-      }
       if (!provider) return;
       try {
         const updatedMarginAccounts = await fetchMarginAccountPreviews(
@@ -190,7 +184,7 @@ export default function BorrowAccountsPage() {
     return () => {
       mounted = false;
     };
-  }, [activeChain, accountAddress, isAllowedToInteract, provider, refetchCount, availablePools, setMarginAccounts]);
+  }, [activeChain, accountAddress, provider, refetchCount, availablePools, setMarginAccounts]);
 
   const dropdownOptions: DropdownOption<string>[] = Array.from(availablePools.entries())
     .map(([addr, info]) => {
@@ -211,11 +205,7 @@ export default function BorrowAccountsPage() {
     })
     .filter((opt) => opt !== null) as DropdownOption<string>[];
 
-  const loadingElement: JSX.Element = isAllowedToInteract ? (
-    <AltSpinner size='M' />
-  ) : (
-    <Display>Functionality unavailable in your jurisdiction</Display>
-  );
+  const loadingElement: JSX.Element = <AltSpinner size='M' />;
 
   return (
     <AppPage>
@@ -231,13 +221,13 @@ export default function BorrowAccountsPage() {
           onClick={() => {
             setShowConfirmModal(true);
           }}
-          disabled={accountAddress === undefined || !isAllowedToInteract}
+          disabled={accountAddress === undefined}
         >
           New
         </FilledGradientButtonWithIcon>
       </div>
       <div className='flex items-center justify-start flex-wrap gap-4'>
-        {isLoadingMarginAccounts || isLoadingGeoFencing || !isAllowedToInteract ? (
+        {isLoadingMarginAccounts ? (
           <div className='flex items-center justify-center w-full'>{loadingElement}</div>
         ) : (
           <ActiveMarginAccounts marginAccounts={marginAccounts} accountAddress={accountAddress} />

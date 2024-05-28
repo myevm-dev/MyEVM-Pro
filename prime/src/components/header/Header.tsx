@@ -1,6 +1,5 @@
 import { NavBar, NavBarLink } from 'shared/lib/components/navbar/NavBar';
 import { GREY_700 } from 'shared/lib/data/constants/Colors';
-import { useGeoFencing } from 'shared/lib/hooks/UseGeoFencing';
 import { isDappnet } from 'shared/lib/util/Utils';
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -30,11 +29,10 @@ export type HeaderProps = {
 
 export default function Header(props: HeaderProps) {
   const { checkboxes } = props;
-  const { isAllowed: isAllowedToInteract } = useGeoFencing();
 
   return (
     <Nav>
-      <NavBar links={NAV_LINKS} checkboxes={checkboxes} isAllowedToInteract={isAllowedToInteract} />
+      <NavBar links={NAV_LINKS} checkboxes={checkboxes} isAllowedToInteract={true} />
     </Nav>
   );
 }

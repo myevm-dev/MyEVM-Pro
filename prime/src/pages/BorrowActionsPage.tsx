@@ -9,7 +9,6 @@ import { GN, GNFormat } from 'shared/lib/data/GoodNumber';
 import useChain from 'shared/lib/hooks/UseChain';
 import { useChainDependentState } from 'shared/lib/hooks/UseChainDependentState';
 import { useDebouncedEffect } from 'shared/lib/hooks/UseDebouncedEffect';
-import { useGeoFencing } from 'shared/lib/hooks/UseGeoFencing';
 import { useLendingPair, useLendingPairs } from 'shared/lib/hooks/UseLendingPairs';
 import { formatPriceRatio } from 'shared/lib/util/Numbers';
 import styled from 'styled-components';
@@ -168,8 +167,6 @@ type AccountParams = {
 
 export default function BorrowActionsPage() {
   const activeChain = useChain();
-  const { isAllowed: isAllowedToInteract } = useGeoFencing();
-
   const navigate = useNavigate();
   const params = useParams<AccountParams>();
   const accountAddressParam = params.account;
@@ -468,7 +465,6 @@ export default function BorrowActionsPage() {
           marketInfo={marketInfo}
           marginAccount={marginAccount}
           uniswapPositions={uniswapPositions}
-          enabled={isAllowedToInteract}
           updateHypotheticalState={updateHypotheticalState}
           onAddFirstAction={() => setUserWantsHypothetical(true)}
         />

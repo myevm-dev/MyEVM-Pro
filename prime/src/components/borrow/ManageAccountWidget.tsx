@@ -193,14 +193,13 @@ export type ManageAccountWidgetProps = {
   marketInfo: MarketInfo | null;
   marginAccount: MarginAccount;
   uniswapPositions: readonly UniswapPosition[];
-  enabled: boolean;
   updateHypotheticalState: (state: AccountState | null) => void;
   onAddFirstAction: () => void;
 };
 
 export default function ManageAccountWidget(props: ManageAccountWidgetProps) {
   // MARK: component props
-  const { marketInfo, marginAccount, uniswapPositions, enabled, updateHypotheticalState, onAddFirstAction } = props;
+  const { marketInfo, marginAccount, uniswapPositions, updateHypotheticalState, onAddFirstAction } = props;
   const { address: accountAddress, token0, token1 } = marginAccount;
 
   const activeChain = useChain();
@@ -374,11 +373,8 @@ export default function ManageAccountWidget(props: ManageAccountWidgetProps) {
                 size='S'
                 svgColorType='stroke'
                 onClick={() => {
-                  if (enabled) {
-                    setShowAddActionModal(true);
-                  }
+                  setShowAddActionModal(true);
                 }}
-                disabled={!enabled}
               >
                 Add Action
               </FilledGradientButtonWithIcon>
@@ -436,7 +432,6 @@ export default function ManageAccountWidget(props: ManageAccountWidgetProps) {
             accountState={finalState}
             actionOutputs={actionOutputs}
             transactionWillFail={activeActions.length > numValidActions}
-            enabled={enabled}
             onSuccessReceipt={() => {
               setActionOutputs([]);
               setUserInputFields([]);
@@ -446,7 +441,7 @@ export default function ManageAccountWidget(props: ManageAccountWidgetProps) {
         </div>
       </ScrollableContainer>
       <BorrowSelectActionModal
-        isOpen={showAddActionModal && enabled}
+        isOpen={showAddActionModal}
         setIsOpen={setShowAddActionModal}
         handleAddAction={(action: Action) => {
           if (activeActions.length === 0) onAddFirstAction();

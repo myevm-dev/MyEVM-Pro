@@ -101,7 +101,6 @@ export type ManageAccountTransactionButtonProps = {
   accountState: AccountState;
   actionOutputs: ActionCardOutput[];
   transactionWillFail: boolean;
-  enabled: boolean;
   onSuccessReceipt: () => void;
 };
 
@@ -116,7 +115,6 @@ export function ManageAccountTransactionButton(props: ManageAccountTransactionBu
     accountState,
     actionOutputs,
     transactionWillFail,
-    enabled,
     onSuccessReceipt,
   } = props;
   const activeChain = useChain();
@@ -140,7 +138,6 @@ export function ManageAccountTransactionButton(props: ManageAccountTransactionBu
   const { data: accountEtherBalance, queryKey: queryKeyBalanceEther } = useBalance({
     address: accountAddress,
     chainId: activeChain.id,
-    query: { enabled: enabled },
   });
   const { data: userAllowance0Asset, queryKey: queryKeyAllowance0 } = useReadContract({
     abi: erc20Abi,
@@ -209,7 +206,6 @@ export function ManageAccountTransactionButton(props: ManageAccountTransactionBu
     functionName: 'getParameters',
     args: [uniswapPool as Address],
     chainId: activeChain.id,
-    query: { enabled: enabled },
   });
 
   const ante = !anteData ? GN.zero(18) : GN.fromBigInt(anteData[0], 18);
@@ -236,7 +232,6 @@ export function ManageAccountTransactionButton(props: ManageAccountTransactionBu
     query: {
       enabled:
         canConstructTransaction &&
-        enabled &&
         !transactionWillFail &&
         !needsApproval[0] &&
         !needsApproval[1] &&

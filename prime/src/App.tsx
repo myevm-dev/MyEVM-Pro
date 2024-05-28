@@ -5,18 +5,12 @@ import { createSyncStoragePersister } from '@tanstack/query-sync-storage-persist
 import { QueryClient } from '@tanstack/react-query';
 import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
 import { Route, Routes, Navigate } from 'react-router-dom';
-import AccountBlockedModal from 'shared/lib/components/common/AccountBlockedModal';
 import Footer from 'shared/lib/components/common/Footer';
 import { Text } from 'shared/lib/components/common/Typography';
 import WelcomeModal from 'shared/lib/components/common/WelcomeModal';
 import { wagmiConfig } from 'shared/lib/components/WagmiConfig';
-import { AccountRiskResult } from 'shared/lib/data/AccountRisk';
-import { screenAddress } from 'shared/lib/data/AccountRisk';
 import { PRIVACY_POLICY_URL, TERMS_OF_SERVICE_URL } from 'shared/lib/data/constants/Values';
-import { fetchGeoFencing, GeoFencingInfo } from 'shared/lib/data/GeoFencing';
-import { AccountRiskContext } from 'shared/lib/hooks/UseAccountRisk';
 import useEffectOnce from 'shared/lib/hooks/UseEffectOnce';
-import { GeoFencingContext } from 'shared/lib/hooks/UseGeoFencing';
 import { getLocalStorageBoolean, setLocalStorageBoolean } from 'shared/lib/util/LocalStorage';
 import ScrollToTop from 'shared/lib/util/ScrollToTop';
 import { useAccount, usePublicClient, WagmiProvider, serialize, deserialize } from 'wagmi';
@@ -54,11 +48,6 @@ const CONNECT_WALLET_CHECKBOXES = [
 
 function AppBodyWrapper() {
   const [isWelcomeModalOpen, setIsWelcomeModalOpen] = useState(false);
-  const [accountRisk, setAccountRisk] = useState<AccountRiskResult>({ isBlocked: false, isLoading: true });
-  const [geoFencingInfo, setGeoFencingInfo] = useState<GeoFencingInfo>({
-    isAllowed: false,
-    isLoading: true,
-  });
 
   const account = useAccount();
   const publicClient = usePublicClient();
@@ -75,65 +64,28 @@ function AppBodyWrapper() {
     }
   }, [account]);
 
-  useEffectOnce(() => {
-    (async () => {
-      const result = await fetchGeoFencing();
-      setGeoFencingInfo({
-        isAllowed: result.isAllowed,
-        isLoading: false,
-      });
-    })();
-  });
-
-  useEffect(() => {
-    (async () => {
-      if (account.address === undefined) {
-        setAccountRisk({ isBlocked: false, isLoading: false });
-        return;
-      }
-      setAccountRisk({ isBlocked: false, isLoading: true });
-      const result = await screenAddress(account.address);
-      setAccountRisk({ isBlocked: result.isBlocked, isLoading: false });
-    })();
-  }, [account.address, setAccountRisk]);
-
-  const isAccountRiskLoading = accountRisk.isLoading;
-  const isAccountBlocked = accountRisk.isBlocked;
-  // const isAllowed = isDevelopment() || geoFencingInfo.isAllowed || Boolean(client?.chain.testnet);
-
-  if (isAccountRiskLoading) {
-    return null;
-  }
-
-  if (isAccountBlocked) {
-    return <AccountBlockedModal isOpen={true} setIsOpen={() => {}} />;
-  }
-
   return (
-    <AccountRiskContext.Provider value={accountRisk}>
-      <GeoFencingContext.Provider value={geoFencingInfo}>
-        <ScrollToTop />
-        <AppBody>
-          <Header checkboxes={CONNECT_WALLET_CHECKBOXES} />
-          <main className='flex-grow'>
-            <Routes>
-              <Route path='/borrow' element={<BorrowAccountsPage />} />
-              <Route path='/borrow/account/:account' element={<BorrowActionsPage />} />
-              <Route path='/' element={<Navigate replace to='/borrow' />} />
-              <Route path='*' element={<Navigate to='/' />} />
-            </Routes>
-          </main>
-          <Footer />
-          <WelcomeModal
-            isOpen={isWelcomeModalOpen}
-            checkboxes={CONNECT_WALLET_CHECKBOXES}
-            setIsOpen={() => setIsWelcomeModalOpen(false)}
-            onAcknowledged={() => setLocalStorageBoolean('hasSeenWelcomeModal', true)}
-          />
-          <AccountBlockedModal isOpen={isAccountBlocked} setIsOpen={() => {}} />
-        </AppBody>
-      </GeoFencingContext.Provider>
-    </AccountRiskContext.Provider>
+    <>
+      <ScrollToTop />
+      <AppBody>
+        <Header checkboxes={CONNECT_WALLET_CHECKBOXES} />
+        <main className='flex-grow'>
+          <Routes>
+            <Route path='/borrow' element={<BorrowAccountsPage />} />
+            <Route path='/borrow/account/:account' element={<BorrowActionsPage />} />
+            <Route path='/' element={<Navigate replace to='/borrow' />} />
+            <Route path='*' element={<Navigate to='/' />} />
+          </Routes>
+        </main>
+        <Footer />
+        <WelcomeModal
+          isOpen={isWelcomeModalOpen}
+          checkboxes={CONNECT_WALLET_CHECKBOXES}
+          setIsOpen={() => setIsWelcomeModalOpen(false)}
+          onAcknowledged={() => setLocalStorageBoolean('hasSeenWelcomeModal', true)}
+        />
+      </AppBody>
+    </>
   );
 }
 

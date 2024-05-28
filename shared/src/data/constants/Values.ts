@@ -6,8 +6,6 @@ export const DEFAULT_CHAIN = optimism;
 export const DEFAULT_ETHERSCAN_URL = 'https://etherscan.io';
 export const Q32 = 0x100000000;
 
-export const API_GEO_FENCING_URL = 'https://geo-fencing.aloe.capital/v1/verify';
-export const API_SCREENING_URL = 'https://geo-fencing.aloe.capital/v1/screen';
 export const API_PRICE_RELAY_LATEST_URL = 'https://api-price.aloe.capital/price-relay/v1/latest';
 export const API_PRICE_RELAY_HISTORICAL_URL = 'https://api-price.aloe.capital/price-relay/v1/historical';
 export const API_PRICE_RELAY_CONSOLIDATED_URL = 'https://api-price.aloe.capital/price-relay/v1/consolidated';
