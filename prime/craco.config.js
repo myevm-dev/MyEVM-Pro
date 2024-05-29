@@ -24,7 +24,8 @@ module.exports = {
         sentryWebpackPlugin({
           authToken: process.env.SENTRY_AUTH_TOKEN,
           org: "aloe-labs-inc",
-          project: "aloe-prime",  
+          project: "aloe-prime",
+          telemetry: false, // Add this line to disable telemetry
         }),
       ],
       module: {
