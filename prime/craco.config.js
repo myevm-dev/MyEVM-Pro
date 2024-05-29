@@ -25,7 +25,7 @@ module.exports = {
           authToken: process.env.SENTRY_AUTH_TOKEN,
           org: "aloe-labs-inc",
           project: "aloe-prime",
-          telemetry: false, // Add this line to disable telemetry
+          telemetry: false, 
         }),
       ],
       module: {
