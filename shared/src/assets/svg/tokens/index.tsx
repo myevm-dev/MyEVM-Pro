@@ -3,6 +3,8 @@ import ApeLogo from './apecoin.svg';
 import BadgerLogo from './badger.svg';
 import BaldLogo from './bald.svg';
 import BasedLogo from './based.svg';
+import DeezLogo from './deez.svg';
+import NutsLogo from './nuts.svg';
 import ConvexLogo from './convex.svg';
 import DaiLogo from './dai.svg';
 import DegenLogo from './degen.svg';
@@ -61,6 +63,8 @@ export {
   RaiLogo,
   RplLogo,
   LooksLogo,
+  DeezLogo,
+  NutsLogo,
   VeloLogo,
   WstEthLogo,
   GmxLogo,

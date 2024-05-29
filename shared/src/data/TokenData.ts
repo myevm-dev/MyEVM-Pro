@@ -13,6 +13,7 @@ import {
   CbEthLogo,
   ConvexLogo,
   DaiLogo,
+  DeezLogo,
   DegenLogo,
   FraxLogo,
   GmxLogo,
@@ -22,6 +23,7 @@ import {
   MakerLogo,
   MaticLogo,
   MimLogo,
+  NutsLogo,
   OpLogo,
   PerpLogo,
   PoolTogetherLogo,
@@ -37,6 +39,24 @@ import {
   WstEthLogo,
 } from '../assets/svg/tokens';
 import { Address } from 'viem';
+
+const DEEZ_BASE = new Token(
+  base.id,
+  '0x0C9D9dAa3D79899B0a8f57EA35285C041e86a78F',
+  18,
+  'deez', // Ensure this is lowercase
+  'December',
+  DeezLogo
+);
+
+const NUTS_BASE = new Token(
+  base.id,
+  '0x39030FAE8909cFf20Bf101fc3c18d2bEBBA2bFA7',
+  18,
+  'nuts', // Ensure this is lowercase
+  'Nutcracker',
+  NutsLogo
+);
 
 const USDC_MAINNET = new Token(
   mainnet.id,
@@ -506,6 +526,8 @@ const TOKEN_DATA: { [chainId: number]: { [address: Address]: Token } } = {
     [USDBC_BASE.address]: USDBC_BASE,
     [DEGEN_BASE.address]: DEGEN_BASE,
     [TOSHI_BASE.address]: TOSHI_BASE,
+    [DEEZ_BASE.address]: DEEZ_BASE,
+    [NUTS_BASE.address]: NUTS_BASE,
     [BRETT_BASE.address]: BRETT_BASE,
   },
   [linea.id]: {
@@ -531,7 +553,7 @@ export function getToken(chainId: number, address: Address): Token | undefined {
 }
 
 export function getTokenBySymbol(chainId: number, symbol: string): Token | undefined {
-  return Object.values(TOKEN_DATA[chainId]).find((token) => token.symbol.toUpperCase() === symbol.toUpperCase());
+  return Object.values(TOKEN_DATA[chainId]).find((token) => token.symbol.toLowerCase() === symbol.toLowerCase());
 }
 
 function getLowercaseAddress(address: Address): Address {
