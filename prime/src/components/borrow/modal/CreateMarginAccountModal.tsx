@@ -51,12 +51,11 @@ export default function CreateMarginAccountModal(props: CreateMarginAccountModal
         {confirmButtonText}
       </FilledStylizedButton>
       <Text size='XS' color={TERTIARY_COLOR} className='w-full mt-2'>
-        By creating a Borrow Vault, you agree to our{' '}
+        By creating a Borrow NFT Vault, you agree to our{' '}
         <a href={TERMS_OF_SERVICE_URL} rel='noreferrer' target='_blank' className='underline'>
           Terms of Service
         </a>{' '}
-        and acknowledge that you may lose your money. Aloe Labs is not responsible for any losses you may incur. It is
-        your duty to educate yourself and be aware of the risks.
+        and acknowledge that you may lose your money. It is your duty to educate yourself and be aware of the risks.
       </Text>
     </Modal>
   );

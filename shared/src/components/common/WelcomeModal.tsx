@@ -23,8 +23,8 @@ export default function WelcomeModal(props: WelcomeModalProps) {
     <Modal isOpen={isOpen} setIsOpen={setIsOpen} title='Welcome!'>
       <div>
         <Text size='M'>
-          To access all Aloe features, you'll need to connect an Ethereum wallet. If you don't have one or you want to
-          learn more about wallets, check out{' '}
+          Connect your Ethereum wallet to Get Started. If you don't have one or you want to learn more about wallets,
+          check out{' '}
           <StyledLink href='https://ethereum.org/en/wallets/' target='_blank' rel='noopener noreferrer'>
             this page
           </StyledLink>{' '}
