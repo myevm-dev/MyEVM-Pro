@@ -7,24 +7,25 @@ import tw from 'twin.macro';
 const NAV_LINKS: NavBarLink[] = [
   {
     label: 'Portfolio',
-    to: '/portfolio',
+    to: 'https://www.myevm.pro/portfolio',
   },
   {
     label: 'Markets',
-    to: '/markets',
+    to: 'https://www.myevm.pro/markets',
   },
   {
     label: 'Borrow',
-    to: isDappnet() ? 'https://earn.aloe.eth/' : 'https://earn.aloe.capital/borrow',
+    to: 'https://www.myevm.pro/borrow',
+    //to: isDappnet() ? 'https://earn.aloe.eth/' : 'https://www.myevm.pro/borrow',
     isExternal: true,
   },
   {
     label: 'LP',
-    to: '/borrow',
+    to: 'https://lp.myevm.pro/',
   },
   {
     label: 'Leaderboard',
-    to: '/leaderboard',
+    to: 'https://www.myevm.pro/leaderboard',
   },
 ];
 

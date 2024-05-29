@@ -6,15 +6,15 @@ import tw from 'twin.macro';
 const DEFAULT_NAV_LINKS: NavBarLink[] = [
   {
     label: 'Portfolio',
-    to: '/portfolio',
+    to: 'https://www.myevm.pro/portfolio',
   },
   {
     label: 'Markets',
-    to: '/markets',
+    to: 'https://www.myevm.pro/markets',
   },
   {
     label: 'Borrow',
-    to: '/borrow',
+    to: 'https://www.myevm.pro/borrow',
   },
   {
     label: 'LP',
