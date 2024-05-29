@@ -6,6 +6,9 @@ import TwitterFooterIcon from '../../assets/svg/TwitterFooter';
 import { RESPONSIVE_BREAKPOINT_TABLET } from '../../data/constants/Breakpoints';
 import { GREY_400 } from '../../data/constants/Colors';
 import myevmpro from '../../assets/png/myevmpro.png';
+import orglogo from '/workspaces/aloe/shared/src/assets/png/orglogo.png';
+import prologo from '/workspaces/aloe/shared/src/assets/png/prologo.png';
+import splashlogo from '/workspaces/aloe/shared/src/assets/png/splashlogo.png';
 
 const StyledFooter = styled.footer`
   position: fixed;
@@ -16,7 +19,7 @@ const StyledFooter = styled.footer`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  min-height: 55px;
+  min-height: 60px;
   background-color: rgba(0, 1, 2, 1);
   border-top: 1px solid rgba(18, 29, 37, 1);
   padding-left: 20px;
@@ -43,9 +46,30 @@ const VerticalDivider = styled.div`
 `;
 
 const Image = styled.img`
-  width: 200px; /* Adjust size as needed */
-  height: 40px; /* Adjust size as needed */
-  margin-right: 10px; /* Adjust spacing as needed */
+  width: 200px;
+  height: 50px;
+  margin-right: 10px;
+`;
+
+const SmallImage = styled.img`
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+`;
+
+const LogoContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+`;
+
+const LogoLink = styled.a`
+  margin: 0 10px;
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+  }
 `;
 
 export default function Footer() {
@@ -57,6 +81,17 @@ export default function Footer() {
           <TwitterFooterIcon width={20} height={20} />
         </a>
       </div>
+      <LogoContainer>
+        <LogoLink href='https://myevm.pro' target='_blank' rel='noopener noreferrer'>
+          <SmallImage src={prologo} alt='Pro Logo' />
+        </LogoLink>
+        <LogoLink href='https://myevm.org' target='_blank' rel='noopener noreferrer'>
+          <SmallImage src={orglogo} alt='Org Logo' />
+        </LogoLink>
+        <LogoLink href='https://splash.wtf' target='_blank' rel='noopener noreferrer'>
+          <SmallImage src={splashlogo} alt='Splash Logo' />
+        </LogoLink>
+      </LogoContainer>
       <div className='flex flex-row items-center'>
         <FooterLink
           as='a'
