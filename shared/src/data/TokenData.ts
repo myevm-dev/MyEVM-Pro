@@ -40,24 +40,6 @@ import {
 } from '../assets/svg/tokens';
 import { Address } from 'viem';
 
-const DEEZ_BASE = new Token(
-  base.id,
-  '0x0C9D9dAa3D79899B0a8f57EA35285C041e86a78F',
-  18,
-  'deez', // Ensure this is lowercase
-  'December',
-  DeezLogo
-);
-
-const NUTS_BASE = new Token(
-  base.id,
-  '0x39030FAE8909cFf20Bf101fc3c18d2bEBBA2bFA7',
-  18,
-  'nuts', // Ensure this is lowercase
-  'Nutcracker',
-  NutsLogo
-);
-
 const USDC_MAINNET = new Token(
   mainnet.id,
   '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
@@ -410,6 +392,24 @@ const BASED_BASE = new Token(
   'BASED',
   'based.markets',
   BasedLogo
+);
+
+const NUTS_BASE = new Token(
+  base.id,
+  '0x39030FAE8909cFf20Bf101fc3c18d2bEBBA2bFA7',
+  18,
+  'nuts', // Ensure this is lowercase
+  'Nutcracker',
+  NutsLogo
+);
+
+const DEEZ_BASE = new Token(
+  base.id,
+  '0x0C9D9dAa3D79899B0a8f57EA35285C041e86a78F',
+  18,
+  'deez', // Ensure this is lowercase
+  'December',
+  DeezLogo
 );
 
 const USDC_LINEA = new Token(linea.id, '0x176211869ca2b568f2a7d4ee941e073a821ee1ff', 6, 'USDC', 'USD Coin', UsdcLogo);
