@@ -18,7 +18,7 @@ const DEFAULT_NAV_LINKS: NavBarLink[] = [
   },
   {
     label: 'LP',
-    to: 'https://prime.aloe.capital/',
+    to: 'https://lp.myevm,pro/',
   },
 ];
 

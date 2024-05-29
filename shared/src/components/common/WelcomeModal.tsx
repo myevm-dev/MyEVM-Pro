@@ -23,7 +23,7 @@ export default function WelcomeModal(props: WelcomeModalProps) {
     <Modal isOpen={isOpen} setIsOpen={setIsOpen} title='Welcome!'>
       <div>
         <Text size='M'>
-          Connect your Ethereum wallet to Get Started. If you don't have one or you want to learn more about wallets,
+          Connect your Ethereum wallet to Get started. If you don't have one or you want to learn more about wallets,
           check out{' '}
           <StyledLink href='https://ethereum.org/en/wallets/' target='_blank' rel='noopener noreferrer'>
             this page
