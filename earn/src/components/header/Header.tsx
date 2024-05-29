@@ -18,7 +18,7 @@ const DEFAULT_NAV_LINKS: NavBarLink[] = [
   },
   {
     label: 'LP',
-    to: 'https://lp.myevm,pro/',
+    to: 'https://lp.myevm.pro/',
   },
 ];
 
