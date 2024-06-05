@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
 import { Popover } from '@headlessui/react';
 import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
@@ -25,10 +24,12 @@ import { OutlinedGradientRoundedButton } from '../common/Buttons';
 import { GNFormat } from '../../data/GoodNumber';
 import { useLeaderboardValue } from '../../hooks/UseLeaderboard';
 
+// Styled components for logos
 const DesktopLogo = styled(AloeDesktopLogo)`
   width: 60px;
   height: 60px;
   margin-right: 1px;
+
   @media (max-width: ${RESPONSIVE_BREAKPOINTS.TABLET}px) {
     display: none;
   }
@@ -38,7 +39,8 @@ const MobileLogo = styled(AloeMobileLogo)`
   width: 40px;
   height: 40px;
   margin-right: 32px;
-  @media (min-width: ${RESPONSIVE_BREAKPOINTS.TABLET + 1}px) {
+
+  @media (max-width: ${RESPONSIVE_BREAKPOINTS.TABLET}px) {
     display: none;
   }
 `;

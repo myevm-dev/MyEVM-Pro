@@ -6,9 +6,7 @@ import TwitterFooterIcon from '../../assets/svg/TwitterFooter';
 import { RESPONSIVE_BREAKPOINT_TABLET } from '../../data/constants/Breakpoints';
 import { GREY_400 } from '../../data/constants/Colors';
 import myevmpro from '../../assets/png/myevmpro.png';
-import orglogo from '/workspaces/aloe/shared/src/assets/png/orglogo.png';
 import prologo from '/workspaces/aloe/shared/src/assets/png/prologo.png';
-import splashlogo from '/workspaces/aloe/shared/src/assets/png/splashlogo.png';
 
 const StyledFooter = styled.footer`
   position: fixed;
@@ -84,12 +82,6 @@ export default function Footer() {
       <LogoContainer>
         <LogoLink href='https://myevm.pro' target='_blank' rel='noopener noreferrer'>
           <SmallImage src={prologo} alt='Pro Logo' />
-        </LogoLink>
-        <LogoLink href='https://myevm.org' target='_blank' rel='noopener noreferrer'>
-          <SmallImage src={orglogo} alt='Org Logo' />
-        </LogoLink>
-        <LogoLink href='https://splash.wtf' target='_blank' rel='noopener noreferrer'>
-          <SmallImage src={splashlogo} alt='Splash Logo' />
         </LogoLink>
       </LogoContainer>
       <div className='flex flex-row items-center'>
