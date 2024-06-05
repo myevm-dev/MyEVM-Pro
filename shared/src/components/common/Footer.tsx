@@ -1,12 +1,11 @@
 import React from 'react';
-
 import { Text } from './Typography';
 import styled from 'styled-components';
 import TwitterFooterIcon from '../../assets/svg/TwitterFooter';
 import { RESPONSIVE_BREAKPOINT_TABLET } from '../../data/constants/Breakpoints';
 import { GREY_400 } from '../../data/constants/Colors';
 import myevmpro from '../../assets/png/myevmpro.png';
-import prologo from '/workspaces/aloe/shared/src/assets/png/prologo.png';
+import casalogo from '/workspaces/aloe/shared/src/assets/png/casalogo.png';
 
 const StyledFooter = styled.footer`
   position: fixed;
@@ -24,7 +23,7 @@ const StyledFooter = styled.footer`
   padding-right: 20px;
   z-index: 40;
 
-  @media (max-width: ${RESPONSIVE_BREAKPOINT_TABLET}) {
+  @media (max-width: ${RESPONSIVE_BREAKPOINT_TABLET}px) {
     display: none;
   }
 `;
@@ -80,8 +79,8 @@ export default function Footer() {
         </a>
       </div>
       <LogoContainer>
-        <LogoLink href='https://myevm.pro' target='_blank' rel='noopener noreferrer'>
-          <SmallImage src={prologo} alt='Pro Logo' />
+        <LogoLink href='https://myevm.casa/' target='_blank' rel='noopener noreferrer'>
+          <SmallImage src={casalogo} alt='Casa Logo' />
         </LogoLink>
       </LogoContainer>
       <div className='flex flex-row items-center'>
