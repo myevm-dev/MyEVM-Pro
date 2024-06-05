@@ -5,7 +5,7 @@ import TwitterFooterIcon from '../../assets/svg/TwitterFooter';
 import { RESPONSIVE_BREAKPOINT_TABLET } from '../../data/constants/Breakpoints';
 import { GREY_400 } from '../../data/constants/Colors';
 import myevmpro from '../../assets/png/myevmpro.png';
-import casalogo from '/workspaces/aloe/shared/src/assets/png/casalogo.png';
+import casalogo from '../../assets/png/casalogo.png'; // Correct import path
 
 const StyledFooter = styled.footer`
   position: fixed;
