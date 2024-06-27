@@ -23,6 +23,7 @@ import {
   MakerLogo,
   MaticLogo,
   MimLogo,
+  NounsLogo,
   NutsLogo,
   OpLogo,
   PerpLogo,
@@ -394,9 +395,10 @@ const BASED_BASE = new Token(
   BasedLogo
 );
 
-const NUTS_BASE = new Token(base.id, '0x39030fae8909cff20bf101fc3c18d2bebba2bfa7', 18, 'Nuts', 'nutcracker', NutsLogo);
+const NOUNS_BASE = new Token(base.id, '0x0a93a7BE7e7e426fC046e204C44d6b03A302b631', 18, 'Nouns', 'nouns', NounsLogo);
+const NUTS_BASE = new Token(base.id, '0x39030fae8909cff20bf101fc3c18d2bebba2bfa7', 18, 'NUTS', 'nutcracker', NutsLogo);
 
-const DEEZ_BASE = new Token(base.id, '0x0c9d9daa3d79899b0a8f57ea35285c041e86a78f', 18, 'Deez', 'december', DeezLogo);
+const DEEZ_BASE = new Token(base.id, '0x0c9d9daa3d79899b0a8f57ea35285c041e86a78f', 18, 'DEEZ', 'december', DeezLogo);
 
 const USDC_LINEA = new Token(linea.id, '0x176211869ca2b568f2a7d4ee941e073a821ee1ff', 6, 'USDC', 'USD Coin', UsdcLogo);
 
@@ -514,6 +516,7 @@ const TOKEN_DATA: { [chainId: number]: { [address: Address]: Token } } = {
     [TOSHI_BASE.address.toLowerCase()]: TOSHI_BASE,
     [DEEZ_BASE.address.toLowerCase()]: DEEZ_BASE,
     [NUTS_BASE.address.toLowerCase()]: NUTS_BASE,
+    [NOUNS_BASE.address.toLowerCase()]: NOUNS_BASE,
     [BRETT_BASE.address.toLowerCase()]: BRETT_BASE,
   },
   [linea.id]: {
