@@ -395,7 +395,7 @@ const BASED_BASE = new Token(
   BasedLogo
 );
 
-const NOUNS_BASE = new Token(base.id, '0x0a93a7BE7e7e426fC046e204C44d6b03A302b631', 18, 'Nouns', 'nouns', NounsLogo);
+const NOUNS_BASE = new Token(base.id, '0x0a93a7BE7e7e426fC046e204C44d6b03A302b631', 18, 'NOUNS', 'nouns', NounsLogo);
 const NUTS_BASE = new Token(base.id, '0x39030fae8909cff20bf101fc3c18d2bebba2bfa7', 18, 'NUTS', 'nutcracker', NutsLogo);
 
 const DEEZ_BASE = new Token(base.id, '0x0c9d9daa3d79899b0a8f57ea35285c041e86a78f', 18, 'DEEZ', 'december', DeezLogo);
